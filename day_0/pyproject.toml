@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kanan-hello"
+version = "0.1.0"
+authors = [
+    {name = "kanan", email = "kanangulati7@gmail.com"},
+]
+description = "A simple hello world package"
+readme = "README.md"
+requires-python = ">=3.13"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/gulatikanan/kanan-hello"
+"Bug Tracker" = "https://github.com/gulatikanan/kanan-hello/issues"
