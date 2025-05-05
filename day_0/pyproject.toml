@@ -4,11 +4,15 @@ build-backend = "hatchling.build"
 
 [project]
 name = "kanan-hello"
-version = "0.1.1"
+version = "0.2.0"
 authors = [
     {name = "kanan", email = "kanangulati7@gmail.com"},
 ]
-description = "A simple hello world package with rich formatting"
+
+description = "developed a simple Python module that returns a greeting based on the provided name. To improve the visual presentation of the output, integrated the rich library, which allows us to display styled and colored text in the terminal.
+Additionally, the module was transformed into a command-line interface (CLI) using the typer library. This makes the application easily accessible via terminal commands, supporting arguments and options for better usability.
+This setup offers both functional utility and a clean user experience through styled terminal output and flexible command-line interaction."
+
 readme = "README.md"
 requires-python = ">=3.13"
 classifiers = [
@@ -18,7 +22,11 @@ classifiers = [
 ]
 dependencies = [
     "rich>=13.0.0",
+    "typer>=0.9.0",
 ]
+
+[project.scripts]
+kanan-hello = "kanan_hello.cli:main"
 
 [project.urls]
 "Homepage" = "https://github.com/gulatikanan/bootcamp/tree/bfaafac4ce4e5e4f3f4feaefd8a32cd2c35c3369/day_0"
