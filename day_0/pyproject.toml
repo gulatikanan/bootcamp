@@ -4,14 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "kanan-hello"
-version = "0.2.0"
+version = "0.3.0"
 authors = [
     {name = "kanan", email = "kanangulati7@gmail.com"},
 ]
 
-description = "developed a simple Python module that returns a greeting based on the provided name. To improve the visual presentation of the output, integrated the rich library, which allows us to display styled and colored text in the terminal.
-Additionally, the module was transformed into a command-line interface (CLI) using the typer library. This makes the application easily accessible via terminal commands, supporting arguments and options for better usability.
-This setup offers both functional utility and a clean user experience through styled terminal output and flexible command-line interaction."
+description = "A simple Python module that returns a greeting based on the provided name. Uses the rich library for styled text in the terminal and integrates the typer library to convert the module into a command-line interface (CLI)."
 
 readme = "README.md"
 requires-python = ">=3.13"
