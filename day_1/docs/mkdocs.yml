@@ -1,0 +1,90 @@
+site_name: kanan-hello
+site_description: A simple Python package demonstrating clean code principles
+site_author: kanan
+site_url: https://github.com/gulatikanan/bootcamp/tree/main/day_0/kanan_hello
+
+repo_name: gulatikanan/bootcamp
+repo_url: https://github.com/gulatikanan/bootcamp/tree/main/day_0/kanan_hello
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+nav:
+  - Home: index.md
+  - User Guide:
+    - Installation: installation.md
+    - Usage: usage.md
+    - CLI Commands: cli-commands.md
+  - Developer Guide:
+    - Architecture: architecture-diagram.md
+    - Design Document: design-document.md
+    - Sequence Diagrams: sequence-diagram.md
+  - Reference:
+    - API Reference: api-reference.md
+    - Markdown Cheatsheet: markdown-cheatsheet.md
+  - About:
+    - Changelog: changelog.md
+    - Contributing: contributing.md
+    - License: license.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/gulatikanan
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/kanangulati
+
+copyright: Copyright &copy; 2025 Kanan
