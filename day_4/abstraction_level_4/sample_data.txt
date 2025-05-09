@@ -1,0 +1,9 @@
+hello world
+this is a test of the stream processing system
+short
+another,line,with,commas
+duplicated line
+duplicated line
+123 numbers don't match pattern
+a really long line that should definitely pass the min_length filter
+final,test,of,the,system

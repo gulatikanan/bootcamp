@@ -1,0 +1,18 @@
+[project]
+name = "aganitha-bootcamp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[tool.uv.workspace]
+members = [
+    "day_0",
+    "day_1",
+    "day_2",
+    "day_4",
+    "day_4/abstraction_level_2",
+    "day_4/abstraction_level_3",
+    "day_4/abstraction_level_4",
+]
