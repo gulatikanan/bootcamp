@@ -1,0 +1,8 @@
+pipeline:
+  - type: processors.stateful_counter.LineCounter
+    config:
+      prefix: "Line"
+  - type: processors.upper.to_uppercase
+  - type: processors.fanout_splitter.SplitLines
+    config:
+      delimiter: " "

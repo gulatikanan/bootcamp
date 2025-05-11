@@ -1,0 +1,46 @@
+# Makefile for File Processing System
+
+.PHONY: help run run-watch run-file clean build-docker run-docker build-package publish-package
+
+help:
+	@echo "Available commands:"
+	@echo "  make run            - Run the system in watch mode"
+	@echo "  make run-watch      - Run the system in watch mode (same as run)"
+	@echo "  make run-file FILE=path/to/file.txt - Process a single file"
+	@echo "  make clean          - Remove all processed files and logs"
+	@echo "  make build-docker   - Build Docker image"
+	@echo "  make run-docker     - Run the system in Docker container"
+	@echo "  make build-package  - Build Python package"
+	@echo "  make publish-package - Publish package to PyPI"
+
+run:
+	python main.py --watch
+
+run-watch:
+	python main.py --watch
+
+run-file:
+	@if [ -z "$(FILE)" ]; then \
+		echo "Error: Please specify a file with FILE=path/to/file.txt"; \
+		exit 1; \
+	fi
+	python main.py --input $(FILE)
+
+clean:
+	rm -rf watch_dir/processed/*
+	rm -rf watch_dir/underprocess/*
+	rm -rf results/*
+	find . -name "__pycache__" -type d -exec rm -rf {} +
+	find . -name "*.pyc" -delete
+
+build-docker:
+	docker build -t file-processor:latest .
+
+run-docker:
+	docker run -p 8000:8000 -v $(PWD)/watch_dir:/app/watch_dir -v $(PWD)/results:/app/results file-processor:latest
+
+build-package:
+	python setup.py sdist bdist_wheel
+
+publish-package:
+	twine upload dist/*

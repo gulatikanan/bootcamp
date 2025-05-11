@@ -1,4 +1,5 @@
-# Abstraction Level 1 – Parameters and CLI Interface
+## Author: KANAN  
+## Level: 1 - Parameters and CLI Interface
 
 ## 📝 Overview
 
@@ -18,7 +19,7 @@ In this level, the script becomes a configurable command-line tool using the `ty
 ## 📄 File Structure
 
 ```
-abstraction-level-1/
+abstraction_level_1/
 ├── input.txt
 ├── .env
 └── process.py
@@ -46,6 +47,16 @@ python process.py --input input.txt --mode snakecase
 
 # Write output to a file
 python process.py --input input.txt --output result_snake.txt
+```
+**input.txt**
+```
+hello guys, 
+python is great!
+```
+**Output:**
+```
+HELLO GUYS,
+PYTHON IS GREAT!
 ```
 
 ## 📂 .env File

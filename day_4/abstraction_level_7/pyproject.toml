@@ -1,0 +1,11 @@
+[project]
+name = "abstraction_level_7"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi==0.95.2",
+    "uvicorn==0.22.0",
+    "pydantic==1.10.13"
+]

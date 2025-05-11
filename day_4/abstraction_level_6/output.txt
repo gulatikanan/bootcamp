@@ -1,0 +1,8 @@
+Info:
+ • [info]_user_authentication_completed
+
+Warnings (1):
+ • [WARNING] High memory usage detected
+
+Errors (1):
+ • [ERROR] Unable to write to configuration file

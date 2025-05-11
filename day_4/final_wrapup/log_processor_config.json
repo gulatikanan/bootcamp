@@ -1,0 +1,28 @@
+{
+  "processors": [
+    {
+      "type": "line_counter",
+      "id": "counter",
+      "format": "[{count}] {line}"
+    },
+    {
+      "type": "filter",
+      "id": "error_filter",
+      "pattern": "ERROR"
+    },
+    {
+      "type": "filter",
+      "id": "important_filter",
+      "pattern": "IMPORTANT"
+    },
+    {
+      "type": "uppercase",
+      "id": "uppercase"
+    },
+    {
+      "type": "line_splitter",
+      "id": "splitter",
+      "delimiter": "|"
+    }
+  ]
+}

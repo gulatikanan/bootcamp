@@ -1,52 +1,121 @@
-# Level 3: Dynamic Config-Driven Pipeline
+## Author: KANAN  
+## Level: 4 — Stream Processing Framework
 
-In this level, we fully decouple pipeline logic from code by allowing users to specify their desired line-processing steps via a configuration file.
+## Introduction
 
-## 📝 Task
+**Stream Processing Framework** implements **iterator-based data handling**, enabling processors to:
 
-The code in this directory:
+* Process data as continuous streams (`Iterator[str]`)
+* Generate **variable output volume** - from none to multiple lines per input
+* Preserve **context between operations** across the data stream
+* Accept **custom parameters** through configuration files
 
-- Uses a YAML configuration file to define processing steps
-- Dynamically loads processor functions from their import paths
-- Builds a pipeline based on the configuration
-- Updates the CLI to accept a config file instead of a mode
+This architecture serves as the groundwork for sophisticated data transformation pipelines supporting **multiple outputs**, **input aggregation**, and **memory-aware processing**.
 
-## 🧩 Key Concepts
+---
 
-- Dynamic function loading
-- Configuration-driven behavior
-- Decoupling logic from code
-- Extensibility through plugins
+## Key Capabilities
 
-## 📋 Structure
+* Stream-oriented processor interface: `Iterator[str] → Iterator[str]`
+* Backward compatibility with existing `str → str` processors through adapter patterns
+* **Multiple output generation** (such as tokenizing sentences)
+* **Context preservation** (like sequential numbering)
+* Per-processor parameterization via `pipeline.yaml`
 
-\`\`\`
-abstraction-level-3/
+---
+
+## Project Structure
+
+```
+abstraction-level-4/
 ├── main.py
 ├── cli.py
 ├── core.py
-├── pipeline.py         # now loads pipeline from YAML
+├── pipeline.py
 ├── types.py
-├── processors/
-│   ├── upper.py
-│   └── snake.py
-└── pipeline.yaml
-\`\`\`
+├── pipeline.yaml
+└── processors/
+    ├── upper.py              # to_uppercase: str → str
+    ├── snake.py              # to_snakecase: str → str
+    ├── fanout_splitter.py    # SplitLines: stream-based, fan-out
+    └── stateful_counter.py   # LineCounter: stream-based, stateful
+```
 
-## 🚀 Usage
+---
 
-\`\`\`bash
+## Implementation Details
+
+The `pipeline.yaml` specifies processing stages using fully qualified module paths and optional parameters:
+
+```yaml
+pipeline:
+  - type: processors.stateful_counter.LineCounter
+    config:
+      prefix: "Line"
+  - type: processors.upper.to_uppercase
+  - type: processors.fanout_splitter.SplitLines
+    config:
+      delimiter: " "
+```
+
+This configuration creates a **3-stage streaming pipeline**:
+
+1. **LineCounter** – Annotates each line with `"Line {n}:"`
+2. **to\_uppercase** – Transforms text to uppercase
+3. **SplitLines** – Segments each line into multiple outputs using spaces as separators
+
+---
+
+## Sample Input (`input.txt`)
+```
+Hello World
+PytHoN is SureLy gREAt
+PiplInes Are GoOd 
+```
+
+---
+
+## Result
+
+```
+LINE
+1:
+HELLO
+WORLD
+LINE
+2:
+PYTHON
+IS
+SURELY
+GREAT
+LINE
+3:
+PIPLINES
+ARE
+GOOD
+```
+
+Each input line undergoes:
+
+1. Sequential numbering (e.g., `Line 1:`)
+2. Case normalization to uppercase
+3. Decomposition into separate lines at space boundaries
+
+---
+
+## Usage Instructions
+
+```bash
 python main.py --input input.txt --config pipeline.yaml
-\`\`\`
+```
 
-## ✅ Checklist
+---
 
-- [ ] CLI accepts a config file
-- [ ] Program dynamically imports processor functions from YAML
-- [ ] All processors conform to the str -> str interface
-- [ ] Import errors are handled cleanly
-- [ ] Configuration file uses full dotted import paths
+## Implementation Verification
 
-## 🔄 Next Steps
-
-In the next level, we'll move from line-by-line functions to stream-based processors that allow more complex behaviors like fan-in and fan-out.
+* [x] Processors implement `Iterator[str] -> Iterator[str]` interface
+* [x] Legacy `str -> str` functions integrated through decorator patterns
+* [x] `LineCounter` retains state and prepends sequence numbers
+* [x] `SplitLines` implements one-to-many transformation
+* [x] Configuration parameters correctly passed to processor instances
+* [x] Individual processors support independent testing

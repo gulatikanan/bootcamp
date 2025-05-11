@@ -15,4 +15,9 @@ members = [
     "day_4/abstraction_level_2",
     "day_4/abstraction_level_3",
     "day_4/abstraction_level_4",
+    "day_4/abstraction_level_7",
+    "day_4/abstraction_level_5",
+    "day_4/abstraction_level_6",
+    "day_4/abstraction_level_8",
+    "day_4/final_wrapup",
 ]

@@ -1,51 +1,75 @@
-# Abstraction Level 0 – Basic Script
+# 🧾 Text Processing Script — Level 0
 
-## 📝 Overview
+## Author: KANAN
+## Level: 0 — Basic Script (No Abstraction)  
 
-This is the foundational step of the project. At this level, the goal is to create a simple, one-off Python script that:
+## 📌 Description
 
-- Reads lines from `stdin`
-- Strips leading and trailing whitespace
-- Converts each line to uppercase
+This is a minimal, single-purpose Python script designed to perform basic text transformation from standard input (stdin) to standard output (stdout). It represents **Level 0** of an incremental software design journey, starting with a quick, unrefactored solution.
+
+### 🔧 What it Does
+
+The script:
+- Reads input line-by-line from `stdin`
+- Strips leading and trailing whitespace from each line
+- Converts each cleaned line to **uppercase**
 - Prints the result to `stdout`
 
-No functions or advanced features — just a straightforward script.
-
-## 📄 File Structure
+## 📁 File Structure
 
 ```
-abstraction-level-0/
-├── input.txt
-└── process.py
+
+abstraction_level_0
+├── process.py     # The main script
+├── sample.txt      # (Optional) Sample input file
+├── output.txt     # (Optional) Captured output
+└── README.md      # Project documentation
+
+````
+
+## ▶️ Usage
+
+### 1. Prepare your input file (optional):
+
+```
+echo " hello guys, 
+python is great!" > input.txt
 ```
 
-## 🚀 How to Run
-
-Make sure you are in the `abstraction-level-0` folder, then run the following command in your terminal:
-
-```bash
-cat input.txt | python process.py
+```
+cat input.txt | python process.py > output.txt
 ```
 
-## 💡 Example
+### 2. Run the script from the command line:
 
-**input.txt**
 ```
- i love python  
-```
-
-**Command:**
-```bash
-cat input.txt | python process.py
+python3 process.py < input.txt > output.txt
 ```
 
-**Output:**
+### 3. Check the output:
+
 ```
-I lOVE PYTHON
+cat output.txt
+# Output:
+# HELLO GUYS, 
+# PYTHON IS GREAT!
+
 ```
 
-## ✅ Checklist
+## ✅ Constraints
 
-- [x] Produces the expected output for a sample file
-- [x] Runs without errors from the command line
-- [x] Sequential, top-to-bottom script (no functions)
+* No functions, classes, or abstractions — just top-to-bottom code.
+* Only built-in Python modules allowed.
+* Focused solely on behavior and correctness for now.
+
+## 📋 Task Checklist
+
+* ✅ Produces correct output for a sample file
+* ✅ Runs without errors from the command line
+* ✅ No refactoring or abstractions added yet
+
+```
+
+> This project is part of a progressive development exercise. Later levels will introduce refactoring, modularity, and testing.
+
+```

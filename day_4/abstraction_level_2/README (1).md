@@ -1,27 +1,31 @@
-# Abstraction Level 2 – Modular Structure and Standardized Processing
+## Author: KANAN  
+## Level:** 2 -  Modular Structure and Standardized Processing
 
 In this level, the previously monolithic script is refactored into a clean, modular design with clearly separated responsibilities. The code is organized into multiple Python modules, allowing better extensibility and maintainability.
 
 ## 🧱 Project Structure
 
 ```
-abstraction-level-2/
+abstraction_level_2/
 ├── main.py         # Entry point, wires up the CLI
 ├── cli.py          # Handles CLI logic using Typer
 ├── core.py         # Core logic: reading, processing, and writing
 ├── pipeline.py     # Chooses processor pipeline based on mode
-├── types.py        # Type definitions (ProcessorFn)
+├── custom_types.py        # Type definitions (ProcessorFn)
 ├── .env            # Contains default mode if not provided
 ├── input.txt       # Sample input file
 ├── output.txt      # Output written here
 └── README.md       # You're reading it!
 ```
 
-## 🔧 Supported Modes
+## 🔄 Supported Modes
 
-- `uppercase`: Convert each line to uppercase.
-- `snakecase`: Convert to lowercase and replace spaces with underscores.
-- `both`: Apply uppercase followed by snakecase (can be modified to reverse if needed).
+| Mode        | Description                                     | Example Input | Output      |
+| ----------- | ----------------------------------------------- | ------------- | ----------- |
+| `uppercase` | Converts lines to uppercase                     | `i love py`   | `I LOVE PY` |
+| `snakecase` | Replaces spaces with underscores and lowercases | `i love py`   | `i_love_py` |
+
+More modes can be added by simply creating new processor functions in `core.py` and including them in `pipeline.py`.
 
 ## ✅ Requirements
 
@@ -57,6 +61,18 @@ python main.py --input input.txt --output test_output.txt --mode both
 ```bash
 python main.py -i input.txt -o test_output.txt -m both
 ```
+
+**input.txt**
+```
+hello guys, 
+python is great!
+```
+**Output:**
+```
+HELLO GUYS,
+PYTHON IS GREAT!
+```
+
 
 ## 📌 Notes
 
