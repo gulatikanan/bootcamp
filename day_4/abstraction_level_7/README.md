@@ -1,6 +1,4 @@
-## Author: KANAN  
-## Level: 7 — Observability and System Introspection
-
+# Level 7 - Observability and System Introspection
 
 This level adds **real-time observability** to the stream processing system, making it transparent, measurable, and understandable.
 
@@ -29,14 +27,27 @@ Similar to tools like:
 ## Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/stream-processing-engine.git
+cd AGANITHA_BOOTCAMP/day_4/abstraction_level_7
+
 # Install dependencies
 pip install fastapi uvicorn
 ```
 
+```
+fastapi==0.115.12
+uvicorn==0.34.2
+pydantic==2.11.4
+
+```
+
+</details>
+
 ## File Structure
 
 ```
-abstraction_level_7/
+level7/
 ├── README.md
 ├── metrics/
 │   ├── __init__.py
@@ -86,13 +97,23 @@ abstraction_level_7/
 - Uses `threading` and locks for thread safety
 - System remains responsive during processing
 
-## Usage
+## Quick Start
+
+<details open>
+<summary>🚀 <b>Getting Started</b></summary>
 
 ### Process a file with tracing and dashboard
 
 ```bash
 python main.py --file input.txt --output result.txt --trace --dashboard
 ```
+
+Then open your browser to [http://localhost:8000](http://localhost:8000) to view the dashboard.
+
+</details>
+
+<details>
+<summary>⚙️ <b>Advanced Usage Options</b></summary>
 
 ### Use a custom configuration
 
@@ -106,6 +127,20 @@ python main.py --file input.txt --config pipeline_config.json --trace --dashboar
 python main.py --dashboard
 ```
 
+### Run with specific dashboard port
+
+```bash
+python main.py --file input.txt --dashboard-port 9000
+```
+
+### Save metrics to a file
+
+```bash
+python main.py --file input.txt --save-metrics metrics.json
+```
+
+</details>
+
 ## Dashboard
 
 The web dashboard is available at [http://localhost:8000](http://localhost:8000) when enabled with the `--dashboard` flag.
@@ -115,6 +150,30 @@ The dashboard provides:
 - **Processor Metrics** (`/stats`): Lines in/out, processing time, and error counts
 - **Traces** (`/trace`): The path of lines through the system (when enabled with `--trace`)
 - **Errors** (`/errors`): Recent errors with processor information
+
+### Dashboard Visualization
+
+Below are screenshots of the dashboard in action:
+
+#### Main Dashboard
+![Dashboard Overview](/day_4/abstraction_level_7/dashboard.png)
+*The main dashboard shows a complete overview of the system with summary metrics*
+
+#### Main Dashboard
+![Dashboard Overview](/day_4/abstraction_level_7/dashboard_recentrace.png)
+*The main dashboard shows a complete overview of the system with summary metrics*
+
+#### Stats View
+![Stats View](/day_4/abstraction_level_7/stats.png)
+*Detailed processor-level metrics showing throughput and performance statistics*
+
+#### Trace View
+![Trace View](/day_4/abstraction_level_7/trace.png)
+*Visualization of data flow through the processing pipeline with timing information*
+
+#### Error Monitoring
+![Error View](/day_4/abstraction_level_7/errors.png)
+*Error tracking with detailed context information for troubleshooting*
 
 ## Configuration
 
@@ -152,16 +211,81 @@ Imagine processing a log file with different log levels (INFO, WARN, ERROR). Wit
 
 You can visit `http://localhost:8000/stats` to immediately answer these questions.
 
+<details>
+<summary>📊 <b>Click to see example metrics output</b></summary>
+
+```json
+{
+  "processors": {
+    "line_counter": {
+      "lines_in": 1000,
+      "lines_out": 1000,
+      "processing_time_ms": 15.7,
+      "errors": 0
+    },
+    "tag_extractor": {
+      "lines_in": 1000,
+      "lines_out": 1000,
+      "processing_time_ms": 25.3,
+      "errors": 0
+    },
+    "error_filter": {
+      "lines_in": 1000,
+      "lines_out": 57,
+      "processing_time_ms": 10.2,
+      "errors": 0
+    },
+    "warn_filter": {
+      "lines_in": 1000,
+      "lines_out": 143,
+      "processing_time_ms": 9.8,
+      "errors": 0
+    },
+    "info_filter": {
+      "lines_in": 1000,
+      "lines_out": 800,
+      "processing_time_ms": 9.5,
+      "errors": 0
+    }
+  },
+  "system": {
+    "total_lines": 1000,
+    "total_processing_time_ms": 70.5,
+    "lines_per_second": 14184.4,
+    "total_errors": 0
+  }
+}
+```
+
+</details>
+
 ## Architecture
 
-### Core Components
+<details open>
+<summary>🏗️ <b>Core Components</b></summary>
 
 - **MetricsStore**: Singleton for storing metrics and traces
 - **ObservableProcessor**: Base class for processors that collect metrics
 - **Dashboard**: FastAPI web server for monitoring
 - **ObservablePipeline**: Chains processors together
 
-### Metrics Collection
+```mermaid
+graph TD
+    A[Input Stream] --> B[ObservablePipeline]
+    B --> C[Processor 1]
+    B --> D[Processor 2]
+    B --> E[Processor 3]
+    C -->|Metrics| F[MetricsStore]
+    D -->|Metrics| F
+    E -->|Metrics| F
+    F --> G[Dashboard Server]
+    G --> H[Web Browser]
+```
+
+</details>
+
+<details>
+<summary>📊 <b>Metrics Collection</b></summary>
 
 Each processor collects:
 
@@ -170,7 +294,24 @@ Each processor collects:
 - Processing time
 - Errors
 
-### Tracing
+Example metrics output:
+
+```json
+{
+  "processor_id": "uppercase_filter",
+  "metrics": {
+    "lines_in": 1432,
+    "lines_out": 926,
+    "processing_time_ms": 128.5,
+    "errors": 0
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>🔍 <b>Tracing</b></summary>
 
 When enabled with the `--trace` flag, the system tracks:
 
@@ -178,14 +319,43 @@ When enabled with the `--trace` flag, the system tracks:
 - Each processor the line passes through
 - The status at each step (start, emit, drop, error)
 
-### Thread Safety
+Example trace output:
+
+```json
+{
+  "line_id": "abc123",
+  "original_content": "ERROR: Connection timed out",
+  "path": [
+    {"processor": "line_reader", "status": "emit", "timestamp": 1620753601.234},
+    {"processor": "error_filter", "status": "match", "timestamp": 1620753601.236},
+    {"processor": "error_counter", "status": "emit", "timestamp": 1620753601.237}
+  ]
+}
+```
+
+</details>
+
+<details>
+<summary>🔒 <b>Thread Safety</b></summary>
 
 All metrics and trace data are protected by locks to ensure thread safety when accessed concurrently by:
 
 - The main processing thread
 - The dashboard server thread
 
-## Multi-Machine Considerations
+```python
+# Example of thread-safe metrics update
+def update_metrics(self, metric_name, value):
+    with self.metrics_lock:
+        self.metrics[metric_name] += value
+```
+
+</details>
+
+## Advanced Topics
+
+<details>
+<summary>🌐 <b>Multi-Machine Considerations</b></summary>
 
 In a distributed environment:
 
@@ -194,7 +364,19 @@ In a distributed environment:
 - Aggregation of metrics from multiple nodes
 - Network latency compensation in measurements
 
-## Production Improvements
+```mermaid
+graph TD
+    A[Worker Node 1] -->|Metrics| D[Central Metrics Repository]
+    B[Worker Node 2] -->|Metrics| D
+    C[Worker Node 3] -->|Metrics| D
+    D --> E[Aggregation Service]
+    E --> F[Dashboard]
+```
+
+</details>
+
+<details>
+<summary>🚀 <b>Production Improvements</b></summary>
 
 For a production system:
 
@@ -204,3 +386,6 @@ For a production system:
 - Detailed resource utilization metrics (CPU, memory)
 - Drill-down capabilities for specific traces or errors
 - Export features for offline analysis
+
+</details>
+
