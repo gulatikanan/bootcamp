@@ -1,0 +1,34 @@
+graph TD;
+    subgraph "Docker Environment"
+        A["App Container"]
+        B["Redis Container"]
+    end
+    
+    subgraph "App Container"
+        A1["FastAPI Application"]
+        A2["CLI Interface"]
+        A3["Folder Watcher"]
+        A4["Job Manager"]
+    end
+    
+    subgraph "Volumes"
+        V1["Data Volume"]
+        V2["Config Volume"]
+        V3["Logs Volume"]
+    end
+    
+    subgraph "External Services"
+        E1["BioC-PMC API"]
+        E2["PubTator3 API"]
+    end
+    
+    A --> V1
+    A --> V2
+    A --> V3
+    A --> B
+    A --> E1
+    A --> E2
+    
+    V1 --> D["DuckDB Database"]
+    V2 --> C["Configuration Files"]
+    V3 --> L["Log Files"]

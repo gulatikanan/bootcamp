@@ -498,6 +498,28 @@ d. Storage Service persists all extracted data
 
 ## 8. Deployment Diagram
 
+```
+graph TD
+    A["User"] --> B["Load Balancer"]
+    B --> C["API Server"]
+    B --> D["API Server"]
+    C --> E["Redis"]
+    D --> E
+    E --> F["Worker"]
+    E --> G["Worker"]
+    F --> H["DuckDB"]
+    G --> H
+    F --> I["BioC-PMC API"]
+    G --> I
+    F --> J["PubTator3 API"]
+    G --> J
+    K["Admin"] --> L["CLI"]
+    L --> H
+    M["Watched Folder"] --> N["File System"]
+    N --> O["Watcher Process"]
+    O --> E
+```
+
 ## 9. Security Considerations
 
 ### 9.1 Authentication & Authorization
