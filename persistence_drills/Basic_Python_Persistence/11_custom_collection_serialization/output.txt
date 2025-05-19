@@ -1,0 +1,6 @@
+create_old_user
+✅ Old version user saved to user_v1.json
+
+load_user_new_version
+✅ Loaded old user into new version class:Username: kanan
+Email: N/A

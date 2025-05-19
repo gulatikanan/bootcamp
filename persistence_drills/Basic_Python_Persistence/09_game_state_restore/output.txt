@@ -1,0 +1,7 @@
+save-game
+✅ Game state saved!
+
+load-game
+✅ Game state loaded:
+Level: 3
+Score: 450

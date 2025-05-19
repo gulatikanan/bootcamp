@@ -1,0 +1,4 @@
+✅ Book deserialized from JSON:
+Title: Atomic Habits
+Author: James Clear
+Year: 2018

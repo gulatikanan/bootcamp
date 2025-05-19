@@ -1,0 +1,3 @@
+✅ Graph deserialized from graph.json:
+Nodes: ['A', 'B']
+Edges: [['A', 'B']]

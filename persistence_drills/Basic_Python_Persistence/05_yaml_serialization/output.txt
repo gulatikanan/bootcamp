@@ -1,0 +1,4 @@
+✅ Car object serialized to YAML:
+brand: Tesla
+model: Model 3
+year: 2022

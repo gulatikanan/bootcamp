@@ -1,0 +1,2 @@
+✅ Book serialized to JSON:
+{"title": "Atomic Habits", "author": "Jame Clear", "year": 2018}  

@@ -1,0 +1,6 @@
+serialize-connection
+✅ Collection serialized to collection.json
+
+deserialize-connection
+✅ Collection loaded from file:
+['Python', 'Data Science', {'project': 'AI Assistant', 'status': 'done'}]

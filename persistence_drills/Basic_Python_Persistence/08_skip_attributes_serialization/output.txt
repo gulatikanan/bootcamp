@@ -1,0 +1,2 @@
+✅User serialized without sensitive attributes:
+{"username": "kanan", "email": "kanan@example.com"}

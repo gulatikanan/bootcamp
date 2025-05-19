@@ -1,0 +1,4 @@
+✅ Person object deserialized from 'person.pkl'
+Name: Kanan
+Institutions: ['Delhi University', 'IIT Delhi']
+Colleagues: ['Anurag', 'Sneha']
