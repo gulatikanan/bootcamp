@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE collection SYSTEM "BioC.dtd">
+<collection>
+  <source>PubMed Central</source>
+  <date>2023-05-19</date>
+  <key>bioc.key</key>
+  <document>
+    <id>PMC6267067</id>
+    <passage>
+      <infon key="type">title</infon>
+      <offset>0</offset>
+      <text>Genetic and epigenetic regulation of human cardiac reprogramming and differentiation in regenerative medicine</text>
+    </passage>
+    <passage>
+      <infon key="type">abstract</infon>
+      <offset>105</offset>
+      <text>Heart disease is the leading cause of death worldwide. The adult human heart has limited regenerative capacity after injury. Cardiac regenerative medicine aims to restore cardiac function by replacing or repairing damaged heart tissue. Advances in stem cell biology and cellular reprogramming have provided new opportunities for cardiac regeneration. This review summarizes recent progress in the genetic and epigenetic regulation of human cardiac reprogramming and differentiation, and discusses the challenges and opportunities for clinical applications in cardiac regenerative medicine.</text>
+    </passage>
+    <passage>
+      <infon key="type">paragraph</infon>
+      <offset>550</offset>
+      <text>Cardiovascular disease remains the leading cause of morbidity and mortality worldwide. Despite advances in medical and surgical therapies, heart failure after myocardial infarction continues to be a major health problem. The adult human heart has limited regenerative capacity after injury, and current therapies do not address the fundamental problem of loss of cardiomyocytes.</text>
+    </passage>
+    <passage>
+      <infon key="type">figure</infon>
+      <infon key="figure_id">fig1</infon>
+      <infon key="figure_url">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267067/bin/fig-1.jpg</infon>
+      <infon key="figure_number">1</infon>
+      <offset>850</offset>
+      <text>Figure 1. Approaches for cardiac regeneration. (A) Cardiac regeneration can be achieved through various approaches, including direct reprogramming of fibroblasts to cardiomyocytes, differentiation of pluripotent stem cells, and activation of endogenous cardiac progenitor cells. (B) Key transcription factors involved in cardiac reprogramming include GATA4, MEF2C, TBX5, and HAND2. These factors work together to activate cardiac gene expression programs while suppressing fibroblast gene signatures.</text>
+    </passage>
+    <passage>
+      <infon key="type">paragraph</infon>
+      <offset>1350</offset>
+      <text>Recent advances in stem cell biology and cellular reprogramming have provided new opportunities for cardiac regeneration. Pluripotent stem cells, including embryonic stem cells (ESCs) and induced pluripotent stem cells (iPSCs), can be differentiated into cardiomyocytes in vitro. Additionally, direct reprogramming of fibroblasts into cardiomyocytes has emerged as an alternative approach for cardiac regeneration.</text>
+    </passage>
+    <passage>
+      <infon key="type">figure</infon>
+      <infon key="figure_id">fig2</infon>
+      <infon key="figure_url">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267067/bin/fig-2.jpg</infon>
+      <infon key="figure_number">2</infon>
+      <offset>1750</offset>
+      <text>Figure 2. Cardiac differentiation of human pluripotent stem cells. (A) Schematic representation of cardiac differentiation protocol. Human pluripotent stem cells are sequentially treated with activators and inhibitors of Wnt signaling to induce cardiac mesoderm and subsequent cardiomyocyte differentiation. (B) Immunostaining of cardiac markers TNNT2 (green) and NKX2-5 (red) in differentiated cardiomyocytes. Nuclei are stained with DAPI (blue). Scale bar: 100 μm. (C) Gene expression analysis during cardiac differentiation showing upregulation of cardiac genes (NKX2-5, TNNT2) and downregulation of pluripotency genes (OCT4, NANOG).</text>
+    </passage>
+    <passage>
+      <infon key="type">paragraph</infon>
+      <offset>2350</offset>
+      <text>Epigenetic modifications play crucial roles in cardiac development and disease. DNA methylation, histone modifications, and chromatin remodeling regulate gene expression during cardiac differentiation and reprogramming. Understanding these epigenetic mechanisms is essential for improving the efficiency and fidelity of cardiac regeneration strategies.</text>
+    </passage>
+    <passage>
+      <infon key="type">figure</infon>
+      <infon key="figure_id">fig3</infon>
+      <infon key="figure_url">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267067/bin/fig-3.jpg</infon>
+      <infon key="figure_number">3</infon>
+      <offset>2650</offset>
+      <text>Figure 3. Epigenetic regulation of cardiac reprogramming. (A) Heatmap showing changes in histone modifications (H3K4me3, H3K27me3, H3K27ac) at cardiac gene promoters during fibroblast to cardiomyocyte reprogramming. (B) DNA methylation levels at cardiac gene promoters decrease during reprogramming, correlating with increased gene expression. (C) Treatment with the histone deacetylase inhibitor valproic acid (VPA) enhances cardiac reprogramming efficiency by promoting an open chromatin state at cardiac gene loci. (D) The DNA methyltransferase inhibitor 5-azacytidine (5-aza) facilitates cardiac reprogramming by reducing DNA methylation at cardiac gene promoters.</text>
+    </passage>
+    <passage>
+      <infon key="type">paragraph</infon>
+      <offset>3250</offset>
+      <text>Clinical applications of cardiac regenerative therapies face several challenges, including cell maturation, electrical integration, immune rejection, and potential tumorigenicity. Addressing these challenges requires further understanding of the molecular mechanisms governing cardiac differentiation and reprogramming.</text>
+    </passage>
+    <passage>
+      <infon key="type">figure</infon>
+      <infon key="figure_id">fig4</infon>
+      <infon key="figure_url">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267067/bin/fig-4.jpg</infon>
+      <infon key="figure_number">4</infon>
+      <offset>3550</offset>
+      <text>Figure 4. Challenges and opportunities for cardiac regenerative medicine. (A) Major challenges include cardiomyocyte maturation, electrical coupling, immune rejection, and potential tumorigenicity. (B) Strategies to address these challenges include optimizing culture conditions, genetic engineering, and tissue engineering approaches. (C) Timeline of key milestones in cardiac regenerative medicine, from the first isolation of human embryonic stem cells to recent clinical trials using pluripotent stem cell-derived cardiomyocytes for treating heart failure.</text>
+    </passage>
+    <passage>
+      <infon key="type">paragraph</infon>
+      <offset>4050</offset>
+      <text>In conclusion, understanding the genetic and epigenetic regulation of cardiac reprogramming and differentiation is crucial for developing effective cardiac regenerative therapies. Future research should focus on improving the efficiency, safety, and clinical applicability of these approaches.</text>
+    </passage>
+  </document>
+</collection>

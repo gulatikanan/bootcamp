@@ -1,0 +1,72 @@
+# Production configuration for Scientific Publication Data Extraction System
+
+app:
+  name: "Scientific Publication Data Extraction"
+  version: "1.0.0"
+  environment: "production"
+  log_level: "WARNING"
+  temp_dir: "/tmp/figure_extraction"
+  output_dir: "/data/output"
+  watched_folder: "/data/watched"
+
+database:
+  type: "postgresql"
+  host: "${DB_HOST}"
+  port: "${DB_PORT}"
+  username: "${DB_USER}"
+  password: "${DB_PASSWORD}"
+  database: "${DB_NAME}"
+  pool_size: 20
+  pool_recycle: 3600
+  echo: false
+  ssl_mode: "require"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  reload: false
+  workers: 4
+  api_keys:
+    - "${API_KEY_1}"
+    - "${API_KEY_2}"
+  cors_origins:
+    - "https://example.com"
+    - "${ADDITIONAL_CORS_ORIGIN}"
+
+external_services:
+  bioc:
+    api_url: "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi"
+    rate_limit: 30  # requests per minute
+  pubtator:
+    api_url: "https://www.ncbi.nlm.nih.gov/research/pubtator3/api/v1"
+    rate_limit: 30  # requests per minute
+
+retry:
+  limit: 5
+  delay: 2  # seconds
+
+processing:
+  batch_size: 50
+  timeout: 600  # seconds
+  entity_types:
+    - "Gene"
+    - "Disease"
+    - "Species"
+    - "Chemical"
+    - "CellLine"
+    - "CellType"
+    - "Protein"
+    - "Mutation"
+    - "DNAMutation"
+    - "SNP"
+  figure_types:
+    - "figure"
+    - "table"
+    - "supplementary-material"
+    - "chart"
+    - "diagram"
+
+duckdb:
+  path: "/data/analytics.duckdb"
+  read_only: false

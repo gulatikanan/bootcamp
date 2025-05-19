@@ -1,0 +1,221 @@
+{
+  "text": "Figure 2. Cardiac differentiation of human pluripotent stem cells. (A) Schematic representation of cardiac differentiation protocol. Human pluripotent stem cells are sequentially treated with activators and inhibitors of Wnt signaling to induce cardiac mesoderm and subsequent cardiomyocyte differentiation. (B) Immunostaining of cardiac markers TNNT2 (green) and NKX2-5 (red) in differentiated cardiomyocytes. Nuclei are stained with DAPI (blue). Scale bar: 100 μm. (C) Gene expression analysis during cardiac differentiation showing upregulation of cardiac genes (NKX2-5, TNNT2) and downregulation of pluripotency genes (OCT4, NANOG).",
+  "denotations": [
+    {
+      "id": "1",
+      "span": {
+        "begin": 8,
+        "end": 15
+      },
+      "obj": "Disease",
+      "text": "Cardiac"
+    },
+    {
+      "id": "2",
+      "span": {
+        "begin": 31,
+        "end": 36
+      },
+      "obj": "Species",
+      "text": "human"
+    },
+    {
+      "id": "3",
+      "span": {
+        "begin": 37,
+        "end": 60
+      },
+      "obj": "CellLine",
+      "text": "pluripotent stem cells"
+    },
+    {
+      "id": "4",
+      "span": {
+        "begin": 97,
+        "end": 104
+      },
+      "obj": "Disease",
+      "text": "cardiac"
+    },
+    {
+      "id": "5",
+      "span": {
+        "begin": 128,
+        "end": 133
+      },
+      "obj": "Species",
+      "text": "Human"
+    },
+    {
+      "id": "6",
+      "span": {
+        "begin": 134,
+        "end": 157
+      },
+      "obj": "CellLine",
+      "text": "pluripotent stem cells"
+    },
+    {
+      "id": "7",
+      "span": {
+        "begin": 211,
+        "end": 214
+      },
+      "obj": "Gene",
+      "text": "Wnt"
+    },
+    {
+      "id": "8",
+      "span": {
+        "begin": 237,
+        "end": 244
+      },
+      "obj": "Disease",
+      "text": "cardiac"
+    },
+    {
+      "id": "9",
+      "span": {
+        "begin": 245,
+        "end": 253
+      },
+      "obj": "CellLine",
+      "text": "mesoderm"
+    },
+    {
+      "id": "10",
+      "span": {
+        "begin": 268,
+        "end": 281
+      },
+      "obj": "CellLine",
+      "text": "cardiomyocyte"
+    },
+    {
+      "id": "11",
+      "span": {
+        "begin": 313,
+        "end": 320
+      },
+      "obj": "Disease",
+      "text": "cardiac"
+    },
+    {
+      "id": "12",
+      "span": {
+        "begin": 329,
+        "end": 334
+      },
+      "obj": "Gene",
+      "text": "TNNT2"
+    },
+    {
+      "id": "13",
+      "span": {
+        "begin": 348,
+        "end": 354
+      },
+      "obj": "Gene",
+      "text": "NKX2-5"
+    },
+    {
+      "id": "14",
+      "span": {
+        "begin": 361,
+        "end": 374
+      },
+      "obj": "CellLine",
+      "text": "differentiated"
+    },
+    {
+      "id": "15",
+      "span": {
+        "begin": 375,
+        "end": 388
+      },
+      "obj": "CellLine",
+      "text": "cardiomyocytes"
+    },
+    {
+      "id": "16",
+      "span": {
+        "begin": 398,
+        "end": 405
+      },
+      "obj": "Chemical",
+      "text": "stained"
+    },
+    {
+      "id": "17",
+      "span": {
+        "begin": 411,
+        "end": 415
+      },
+      "obj": "Chemical",
+      "text": "DAPI"
+    },
+    {
+      "id": "18",
+      "span": {
+        "begin": 452,
+        "end": 459
+      },
+      "obj": "Disease",
+      "text": "cardiac"
+    },
+    {
+      "id": "19",
+      "span": {
+        "begin": 500,
+        "end": 507
+      },
+      "obj": "Disease",
+      "text": "cardiac"
+    },
+    {
+      "id": "20",
+      "span": {
+        "begin": 514,
+        "end": 520
+      },
+      "obj": "Gene",
+      "text": "NKX2-5"
+    },
+    {
+      "id": "21",
+      "span": {
+        "begin": 522,
+        "end": 527
+      },
+      "obj": "Gene",
+      "text": "TNNT2"
+    },
+    {
+      "id": "22",
+      "span": {
+        "begin": 557,
+        "end": 569
+      },
+      "obj": "Disease",
+      "text": "pluripotency"
+    },
+    {
+      "id": "23",
+      "span": {
+        "begin": 576,
+        "end": 580
+      },
+      "obj": "Gene",
+      "text": "OCT4"
+    },
+    {
+      "id": "24",
+      "span": {
+        "begin": 582,
+        "end": 587
+      },
+      "obj": "Gene",
+      "text": "NANOG"
+    }
+  ]
+}
