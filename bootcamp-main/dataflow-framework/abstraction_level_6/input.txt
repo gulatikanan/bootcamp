@@ -1,0 +1,3 @@
+[INFO] User authentication completed
+[WARNING] High memory usage detected
+[ERROR] Unable to write to configuration file

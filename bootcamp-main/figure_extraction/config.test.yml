@@ -1,0 +1,54 @@
+# Testing configuration for Scientific Publication Data Extraction System
+
+app:
+  name: "Scientific Publication Data Extraction"
+  version: "1.0.0"
+  environment: "testing"
+  log_level: "INFO"
+  temp_dir: "./temp_test"
+  output_dir: "./output_test"
+  watched_folder: "./watched_test"
+
+database:
+  type: "sqlite"
+  path: ":memory:"  # In-memory database for testing
+  pool_size: 1
+  pool_recycle: 3600
+  echo: false
+
+api:
+  host: "0.0.0.0"
+  port: 8001
+  debug: false
+  reload: false
+  workers: 1
+  api_keys:
+    - "test_api_key_12345"
+  cors_origins:
+    - "http://localhost:3000"
+
+external_services:
+  bioc:
+    api_url: "mock://bioc.api"  # Mock URL for testing
+    rate_limit: 100  # Higher rate limit for testing
+  pubtator:
+    api_url: "mock://pubtator.api"  # Mock URL for testing
+    rate_limit: 100  # Higher rate limit for testing
+
+retry:
+  limit: 1  # Lower retry limit for faster tests
+  delay: 0.1  # seconds
+
+processing:
+  batch_size: 5
+  timeout: 60  # seconds
+  entity_types:
+    - "Gene"
+    - "Disease"
+    - "Species"
+  figure_types:
+    - "figure"
+
+duckdb:
+  path: ":memory:"  # In-memory database for testing
+  read_only: false

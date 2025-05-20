@@ -1,0 +1,110 @@
+{
+  "id": "fig_12346",
+  "paper_id": "PMC6267067",
+  "figure_number": 2,
+  "caption": "Figure 2. Cardiac differentiation of human pluripotent stem cells. (A) Schematic representation of cardiac differentiation protocol. Human pluripotent stem cells are sequentially treated with activators and inhibitors of Wnt signaling to induce cardiac mesoderm and subsequent cardiomyocyte differentiation. (B) Immunostaining of cardiac markers TNNT2 (green) and NKX2-5 (red) in differentiated cardiomyocytes. Nuclei are stained with DAPI (blue). Scale bar: 100 μm. (C) Gene expression analysis during cardiac differentiation showing upregulation of cardiac genes (NKX2-5, TNNT2) and downregulation of pluripotency genes (OCT4, NANOG).",
+  "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6267067/bin/fig-2.jpg",
+  "entities": [
+    {
+      "id": "ent_67890",
+      "entity_text": "Cardiac",
+      "entity_type": "Disease",
+      "start_position": 8,
+      "end_position": 15,
+      "external_id": "D002311"
+    },
+    {
+      "id": "ent_67891",
+      "entity_text": "human",
+      "entity_type": "Species",
+      "start_position": 31,
+      "end_position": 36,
+      "external_id": "9606"
+    },
+    {
+      "id": "ent_67892",
+      "entity_text": "pluripotent stem cells",
+      "entity_type": "CellLine",
+      "start_position": 37,
+      "end_position": 60,
+      "external_id": "CL:0002248"
+    },
+    {
+      "id": "ent_67893",
+      "entity_text": "Wnt",
+      "entity_type": "Gene",
+      "start_position": 211,
+      "end_position": 214,
+      "external_id": "7471"
+    },
+    {
+      "id": "ent_67894",
+      "entity_text": "cardiac",
+      "entity_type": "Disease",
+      "start_position": 237,
+      "end_position": 244,
+      "external_id": "D002311"
+    },
+    {
+      "id": "ent_67895",
+      "entity_text": "cardiomyocyte",
+      "entity_type": "CellLine",
+      "start_position": 268,
+      "end_position": 281,
+      "external_id": "CL:0000746"
+    },
+    {
+      "id": "ent_67896",
+      "entity_text": "TNNT2",
+      "entity_type": "Gene",
+      "start_position": 329,
+      "end_position": 334,
+      "external_id": "7139"
+    },
+    {
+      "id": "ent_67897",
+      "entity_text": "NKX2-5",
+      "entity_type": "Gene",
+      "start_position": 348,
+      "end_position": 354,
+      "external_id": "1482"
+    },
+    {
+      "id": "ent_67898",
+      "entity_text": "cardiomyocytes",
+      "entity_type": "CellLine",
+      "start_position": 375,
+      "end_position": 388,
+      "external_id": "CL:0000746"
+    },
+    {
+      "id": "ent_67899",
+      "entity_text": "DAPI",
+      "entity_type": "Chemical",
+      "start_position": 411,
+      "end_position": 415,
+      "external_id": "C048423"
+    },
+    {
+      "id": "ent_67900",
+      "entity_text": "OCT4",
+      "entity_type": "Gene",
+      "start_position": 576,
+      "end_position": 580,
+      "external_id": "5460"
+    },
+    {
+      "id": "ent_67901",
+      "entity_text": "NANOG",
+      "entity_type": "Gene",
+      "start_position": 582,
+      "end_position": 587,
+      "external_id": "79923"
+    }
+  ],
+  "paper": {
+    "id": "PMC6267067",
+    "title": "Genetic and epigenetic regulation of human cardiac reprogramming and differentiation in regenerative medicine",
+    "abstract": "Heart disease is the leading cause of death worldwide. The adult human heart has limited regenerative capacity after injury. Cardiac regenerative medicine aims to restore cardiac function by replacing or repairing damaged heart tissue. Advances in stem cell biology and cellular reprogramming have provided new opportunities for cardiac regeneration. This review summarizes recent progress in the genetic and epigenetic regulation of human cardiac reprogramming and differentiation, and discusses the challenges and opportunities for clinical applications in cardiac regenerative medicine."
+  }
+}

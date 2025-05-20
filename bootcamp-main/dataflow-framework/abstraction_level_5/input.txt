@@ -1,0 +1,4 @@
+ERROR: Disk full
+WARNING: High memory usage
+INFO: System operational
+ERROR: Unauthorized access attempt

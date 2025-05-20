@@ -1,0 +1,18 @@
+{
+  "processors": [
+    {
+      "type": "line_counter",
+      "id": "counter",
+      "format": "Line {count}: {line}"
+    },
+    {
+      "type": "uppercase",
+      "id": "uppercase"
+    },
+    {
+      "type": "filter",
+      "id": "important_filter",
+      "pattern": "important"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+# Development configuration for Scientific Publication Data Extraction System
+
+app:
+  name: "Scientific Publication Data Extraction"
+  version: "1.0.0"
+  environment: "development"
+  log_level: "DEBUG"
+  temp_dir: "./temp"
+  output_dir: "./output"
+  watched_folder: "./watched"
+
+database:
+  type: "sqlite"
+  path: "./data/dev.db"
+  pool_size: 5
+  pool_recycle: 3600
+  echo: true
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: true
+  reload: true
+  workers: 1
+  api_keys:
+    - "dev_api_key_12345"
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://127.0.0.1:3000"
+
+external_services:
+  bioc:
+    api_url: "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi"
+    rate_limit: 30  # requests per minute
+  pubtator:
+    api_url: "https://www.ncbi.nlm.nih.gov/research/pubtator3/api/v1"
+    rate_limit: 30  # requests per minute
+
+retry:
+  limit: 3
+  delay: 1  # seconds
+
+processing:
+  batch_size: 10
+  timeout: 300  # seconds
+  entity_types:
+    - "Gene"
+    - "Disease"
+    - "Species"
+    - "Chemical"
+    - "CellLine"
+    - "CellType"
+    - "Protein"
+  figure_types:
+    - "figure"
+    - "table"
+    - "supplementary-material"
+
+duckdb:
+  path: "./data/analytics.duckdb"
+  read_only: false

@@ -1,0 +1,5 @@
+[INFO] Count of errors: 2
+[INFO] Count of warnings: 1
+ERROR archived: Disk full
+ERROR archived: Unauthorized access attempt
+General Message: System operational
